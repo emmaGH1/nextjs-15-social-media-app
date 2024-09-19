@@ -9,6 +9,7 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form"
 import { signUp } from "./action";
 import { PasswordInput } from "@/components/PasswordInput";
+import LoadingButton from "@/components/ui/LoadingButton";
 
 export default function SignUpForm() {
    const [error, setError] = useState<string>();
@@ -79,9 +80,9 @@ export default function SignUpForm() {
             />
 
 
-            <Button type="submit" className="w-full">
-               Create account
-            </Button>
+            <LoadingButton loading={isPending} type="submit" className="w-full">
+              Create Account
+            </LoadingButton>
          </form>
       </Form>
     )
