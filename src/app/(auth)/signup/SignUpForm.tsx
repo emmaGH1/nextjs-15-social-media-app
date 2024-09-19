@@ -8,6 +8,7 @@ import { zodResolver} from "@hookform/resolvers/zod"
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form"
 import { signUp } from "./action";
+import { PasswordInput } from "@/components/PasswordInput";
 
 export default function SignUpForm() {
    const [error, setError] = useState<string>();
@@ -70,7 +71,7 @@ export default function SignUpForm() {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input placeholder="Password" type="Password" {...field} />
+                      <PasswordInput placeholder="password" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem> 
